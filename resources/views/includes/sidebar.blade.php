@@ -12,6 +12,10 @@
             class="{{ request()->is('admin/disease*') ? 'bg-primary text-white' : '' }} py-2 px-6 rounded-md  hover:bg-primary hover:text-white transition">
             <div class="flex flex-row gap-2 items-center"><i class="fa-solid fa-disease"></i>Penyakit</div>
         </a>
+        <a href="/admin/history"
+            class="{{ request()->is('admin/history*') ? 'bg-primary text-white' : '' }} py-2 px-6 rounded-md  hover:bg-primary hover:text-white transition">
+            <div class="flex flex-row gap-2 items-center"><i class="fa-solid fa-clock-rotate-left"></i>Riwayat</div>
+        </a>
     </ul>
     <div>
         <ul>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DiseaseController;
+use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\SymptomDiseaseController;
 use App\Http\Controllers\Admin\SymptomsController;
 use App\Http\Controllers\DiagnoseController;
@@ -29,8 +30,12 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::resource('disease', DiseaseController::class);
     Route::resource('symptom', SymptomsController::class);
 
+    Route::get('history', [HistoryController::class, 'index'])->name('history');
+    Route::get('history-detail/{result_id}', [HistoryController::class, 'detail'])->name('history-detail');
+
     Route::get('get-disease', [DiseaseController::class, 'getData'])->name('diseaseData');
     Route::get('get-symptoms', [SymptomsController::class, 'getData'])->name('symptomData');
+    Route::get('get-history', [HistoryController::class, 'getData'])->name('historyDataAdmin');
 });
 
 Route::middleware(['auth'])->group(function() {

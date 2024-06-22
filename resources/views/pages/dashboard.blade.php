@@ -13,9 +13,13 @@
         </div>
         <div class=" font-semibold text-primary text-4xl">Dashboard</div>
     </div>
-    <div class="bg-white p-8 rounded-md text-gray-500 w-fit">
-        <div class="text-2xl font-semibold">Pendaftar</div>
-        <div class="text-6xl font-semibold">1 <span class="text-lg font-medium">data</span>
-        </div>
+    <div class="grid grid-cols-4 gap-6 items-center">
+        @foreach ($disease as $item)
+            <div class="bg-white p-8 rounded-lg text-gray-500">
+                <div class="text-2xl font-semibold">{{ $item->disease }}</div>
+                <div class="text-6xl font-semibold">{{ $item->count }} <span class="text-lg font-medium">riwayat</span>
+                </div>
+            </div>
+        @endforeach
     </div>
 @endsection
